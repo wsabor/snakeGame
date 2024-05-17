@@ -14,18 +14,6 @@ const audio = new Audio("../assets/audio.mp3");
 //definir velocidade
 let velocidade = 220;
 
-//aumentar velocidade
-// const aumentaVelocidade = () => {
-//   //   while (velocidade > 80) {
-//   //     velocidade = velocidade - 10;
-//   //   }
-//   if (velocidade > 80) {
-//     velocidade = velocidade - 10;
-//   } else {
-//     velocidade = 200;
-//   }
-// };
-
 //definir tamanho padrão
 const size = 30;
 
@@ -41,7 +29,7 @@ const incrementScore = () => {
 };
 
 const incrementSpeed = () => {
-  speed.innerText = velocidade;
+  speed.innerText = velocidade.toFixed(0);
 };
 
 //gerar número aleatório
