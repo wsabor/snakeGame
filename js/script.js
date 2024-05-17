@@ -6,24 +6,25 @@ const score = document.querySelector(".score--value");
 const finalScore = document.querySelector(".final-score > span");
 const menu = document.querySelector(".menu-screen");
 const buttonPlay = document.querySelector(".btn-play");
+const speed = document.querySelector(".speed--value");
 
 //definir o áudio
 const audio = new Audio("../assets/audio.mp3");
 
 //definir velocidade
-let velocidade = 200;
+let velocidade = 220;
 
 //aumentar velocidade
-const aumentaVelocidade = () => {
-  //   while (velocidade > 80) {
-  //     velocidade = velocidade - 10;
-  //   }
-  if (velocidade > 80) {
-    velocidade = velocidade - 10;
-  } else {
-    velocidade = 200;
-  }
-};
+// const aumentaVelocidade = () => {
+//   //   while (velocidade > 80) {
+//   //     velocidade = velocidade - 10;
+//   //   }
+//   if (velocidade > 80) {
+//     velocidade = velocidade - 10;
+//   } else {
+//     velocidade = 200;
+//   }
+// };
 
 //definir tamanho padrão
 const size = 30;
@@ -37,6 +38,10 @@ let snake = [initialPosition];
 //aumentar pontuação
 const incrementScore = () => {
   score.innerText = +score.innerText + snake.length;
+};
+
+const incrementSpeed = () => {
+  speed.innerText = velocidade;
 };
 
 //gerar número aleatório
@@ -146,7 +151,7 @@ const checkEat = () => {
     snake.push(head);
     audio.play();
     incrementScore();
-    //aumentaVelocidade();
+    incrementSpeed();
 
     //declarar variáveis de posição para verificar se não estão no meio da cobrinha
     let x = randomPosition();
@@ -161,6 +166,8 @@ const checkEat = () => {
     food.x = x;
     food.y = y;
     food.color = randomColor();
+
+    velocidade = velocidade > 95 ? velocidade * (1 - 0.01 * snake.length) : 80;
   }
 };
 
@@ -206,11 +213,10 @@ const gameLoop = () => {
   moveSnake(); //move a cobrinha
   checkEat(); //verifica se a cobrinha comeu a comida
   checkCollision(); //verifica a colisão
-  //aumentaVelocidade(); //aumenta a velocidade do jogo
 
   loopId = setTimeout(() => {
     gameLoop();
-  }, 150); // colocada dentro de uma variável loopId para poder ser chamada na hora de limpar
+  }, velocidade); // colocada dentro de uma variável loopId para poder ser chamada na hora de limpar
 };
 
 //captura do pressionamento das teclas
@@ -236,6 +242,7 @@ document.addEventListener("keydown", ({ key }) => {
 buttonPlay.addEventListener("click", () => {
   //zera as propriedades e placar
   score.innerText = "00";
+  speed.innerText = "220";
   menu.style.display = "none";
   canvas.style.filter = "none";
 
