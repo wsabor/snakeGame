@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #8bd9465a;
+  background-color: #212121;
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -18,12 +18,11 @@ body {
 }
 
 canvas {
-  background-color: #34bfdb99;
+  background-color: #111;
 }
 
 .speed {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
@@ -40,18 +39,15 @@ canvas {
 
 .score {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
   font-size: 1.8rem;
-  margin: 0 10px;
 }
 
 .score--value {
   font-weight: 700;
   font-size: 4.5rem;
   display: block;
-  margin: 10px 0;
+  margin-top: -10px;
 }
 
 .menu-screen {

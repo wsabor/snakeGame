@@ -12,7 +12,7 @@ const speed = document.querySelector(".speed--value");
 const audio = new Audio("../assets/audio.mp3");
 
 //definir velocidade
-let velocidade = 200;
+let velocidade = 220;
 
 //definir tamanho padrão
 const size = 30;
