@@ -27,6 +27,7 @@ canvas {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 .speed--value {
@@ -39,16 +40,18 @@ canvas {
 
 .score {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   font-size: 1.8rem;
+  margin: 0 10px;
 }
 
 .score--value {
   font-weight: 700;
   font-size: 4.5rem;
   display: block;
-  margin-top: -10px;
+  margin: 10px 0;
 }
 
 .menu-screen {
