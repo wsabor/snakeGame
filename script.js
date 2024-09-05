@@ -9,7 +9,7 @@ const buttonPlay = document.querySelector(".btn-play");
 const speed = document.querySelector(".speed--value");
 
 //definir o áudio
-const audio = new Audio("../assets/audio.mp3");
+const audio = new Audio("audio.mp3");
 
 //definir velocidade
 let velocidade = 220;
